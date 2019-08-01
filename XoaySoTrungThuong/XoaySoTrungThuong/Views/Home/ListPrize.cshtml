@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Danh sách rule";
+}
+
+<div class="col-md-12">
+    <br />
+    <h2 style="color:red;">Danh sách giải thưởng</h2>
+    @Html.ActionLink("Thêm giải thưởng mới", "AddNewPrize", "Home")
+    <p>
+        <div class="box-body">
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th style="color:red;text-align:center">STT</th>
+                        <th style="color: red; text-align: center">Cơ cấu giải</th>
+                        <th style="color: red; text-align: center">Chi Tiết Giải</th>
+                        <th style="color: red; text-align: center; width:12%">Số Lượng Giải</th>
+                        <th style="color: red; text-align: center">Ghi Chú</th>
+                        <th style="color: red; text-align: center">Hình Ảnh</th>
+                        <th style="color: red; text-align: center">Công cụ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var listPrize = (System.Data.Entity.Core.Objects.ObjectResult<getAllPrize_Result>)ViewBag.ListPrize;
+                        if (listPrize != null)
+                        {
+                            foreach (var u in listPrize)
+                            {
+                                <tr>
+                                    <td style="text-align: center">@u.ID_Prize</td>
+                                    <td style="text-align: center">@u.CoCauGiai</td>
+                                    <td style="text-align: center">@u.ChiTietGiai</td>
+                                    <td style="text-align: center">@u.Number</td>
+                                    <td style="text-align: center">@u.GhiChu</td>
+                                    <td style="text-align: center"><img src="@u.HinhAnh" /></td>
+                                    <td style="width: 10%; text-align: center">
+                                        <a href="@Url.Action("EditNewPrize", "Home" , new { id = u.ID_Prize })">Sửa </a>
+                                        || <a href="@Url.Action("DeletePrize", "Home" , new { id = u.ID_Prize })">Xóa </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th style="color: red; text-align: center">STT</th>
+                        <th style="color: red; text-align: center">Cơ cấu giải</th>
+                        <th style="color: red; text-align: center">Chi Tiết Giải</th>
+                        <th style="color: red; text-align: center">Số Lượng Giải</th>
+                        <th style="color: red; text-align: center">Ghi Chú</th>
+                        <th style="color: red; text-align: center">Hình Ảnh</th>
+                        <th style="color: red; text-align: center">Công cụ</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </p>
+</div>
+
+

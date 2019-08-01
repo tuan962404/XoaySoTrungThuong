@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="XoaySoTrungThuongModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HinhNen">
+    <Key>
+      <PropertyRef Name="ID_HinhNen" />
+    </Key>
+    <Property Name="ID_HinhNen" Type="int" Nullable="false" />
+    <Property Name="HinhNen" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LogQuay">
+    <Key>
+      <PropertyRef Name="ID_LogQuay" />
+    </Key>
+    <Property Name="ID_LogQuay" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrentID_Rule" Type="int" />
+    <Property Name="ID_Player" Type="int" />
+    <Property Name="ID_Prize" Type="int" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="ID_Player" />
+    </Key>
+    <Property Name="ID_Player" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="4" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Room" Type="nvarchar(max)" />
+    <Property Name="BelongType" Type="nvarchar" MaxLength="200" />
+    <Property Name="Flag" Type="bit" />
+  </EntityType>
+  <EntityType Name="PlayerGP">
+    <Key>
+      <PropertyRef Name="ID_PlayerGP" />
+    </Key>
+    <Property Name="ID_PlayerGP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Room" Type="nvarchar(max)" />
+    <Property Name="BelongType" Type="nvarchar" MaxLength="200" />
+    <Property Name="Flag" Type="nchar" MaxLength="10" />
+    <Property Name="Dot" Type="int" />
+    <Property Name="Lan" Type="int" />
+    <Property Name="Giai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PlayerIV">
+    <Key>
+      <PropertyRef Name="ID_PlayerIV" />
+    </Key>
+    <Property Name="ID_PlayerIV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Room" Type="nvarchar(max)" />
+    <Property Name="BelongType" Type="nvarchar" MaxLength="200" />
+    <Property Name="Flag" Type="nchar" MaxLength="10" />
+    <Property Name="Dot" Type="int" />
+    <Property Name="Lan" Type="int" />
+    <Property Name="Giai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Prize">
+    <Key>
+      <PropertyRef Name="ID_Prize" />
+    </Key>
+    <Property Name="ID_Prize" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CoCauGiai" Type="nvarchar" MaxLength="200" />
+    <Property Name="ChiTietGiai" Type="nvarchar(max)" />
+    <Property Name="Number" Type="int" />
+    <Property Name="GhiChu" Type="nvarchar(max)" />
+    <Property Name="HinhAnh" Type="nvarchar(max)" />
+    <Property Name="ID_Rule" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="SoLanDaQuay" Type="int" />
+  </EntityType>
+  <EntityType Name="RuleToPlay">
+    <Key>
+      <PropertyRef Name="ID_Rule" />
+    </Key>
+    <Property Name="ID_Rule" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoundNumber" Type="int" />
+    <Property Name="PrizeNumber" Type="int" />
+    <Property Name="GuessNumber" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Stage" Type="int" />
+    <Property Name="SoKMDaTrungGiai" Type="int" />
+  </EntityType>
+  <Association Name="FK__Prize__ID_Rule__1BFD2C07">
+    <End Role="RuleToPlay" Type="Self.RuleToPlay" Multiplicity="0..1" />
+    <End Role="Prize" Type="Self.Prize" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleToPlay">
+        <PropertyRef Name="ID_Rule" />
+      </Principal>
+      <Dependent Role="Prize">
+        <PropertyRef Name="ID_Rule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CountAllPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="deleteAllGuess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="deleteAllPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="deletePlayerGP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="deletePlayerIV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="deletePrize" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_Prize" Type="int" Mode="In" />
+  </Function>
+  <Function Name="deleteRuleToPlay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_Rule" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DotQuay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getAllDotQuay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getAllPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getAllPlayerGP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getAllPlayerIV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getAllPrize" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllRule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getDotQuay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getGiaiThuong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getLanQuay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getPlayerGP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getPlayerIV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getPrize" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getRule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getRuleToPlay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getSoLanDaQuay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GiaiThuong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="insertLogQuay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CurrentID_Rule" Type="int" Mode="In" />
+    <Parameter Name="ID_Player" Type="int" Mode="In" />
+    <Parameter Name="ID_Prize" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insertPrize" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CoCauGiai" Type="nvarchar" Mode="In" />
+    <Parameter Name="ChiTietGiai" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Number" Type="int" Mode="In" />
+    <Parameter Name="GhiChu" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="HinhAnh" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ID_Rule" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LanQuay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="PrizeRule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="updateFlagForPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_Player" Type="int" Mode="In" />
+  </Function>
+  <Function Name="updateRuleToPlay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_Rule" Type="int" Mode="In" />
+    <Parameter Name="RoundNumber" Type="int" Mode="In" />
+    <Parameter Name="PrizeNumber" Type="int" Mode="In" />
+    <Parameter Name="GuessNumber" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="XoaySoTrungThuongModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HinhNen" EntityType="Self.HinhNen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogQuay" EntityType="Self.LogQuay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayerGP" EntityType="Self.PlayerGP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayerIV" EntityType="Self.PlayerIV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prize" EntityType="Self.Prize" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RuleToPlay" EntityType="Self.RuleToPlay" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Prize__ID_Rule__1BFD2C07" Association="Self.FK__Prize__ID_Rule__1BFD2C07">
+      <End Role="RuleToPlay" EntitySet="RuleToPlay" />
+      <End Role="Prize" EntitySet="Prize" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

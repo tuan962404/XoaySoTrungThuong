@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewBag.Title = "ChangeBackground";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quay số trúng thưởng - VÂN HẬU</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <div id="content">
+
+    </div>
+    <script id="style" type="x-tmpl-mustache">
+        <style>
+            body {
+                height: 100%;
+                width: 100%;
+                /*your background image*/
+                /*background-image: url('../../Content/9.jpg');*/
+                background-image: url('{{{Hinh}}}');
+                background-repeat: no-repeat; /*we want to have one single image not a repeated one*/
+                background-size: cover; /*this sets the image to fullscreen covering the whole screen*/
+                /*css hack for ie*/
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.image.jpg',sizingMethod='scale');
+                -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.jpg',sizingMethod='scale')";
+            }
+
+            #primary_nav_wrap {
+                margin-top: 15px;
+            }
+
+                #primary_nav_wrap ul {
+                    list-style: none;
+                    position: relative;
+                    float: left;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                    #primary_nav_wrap ul a {
+                        display: block;
+                        color: #333;
+                        text-decoration: none;
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 32px;
+                        padding: 0 15px;
+                        font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+                    }
+
+                    #primary_nav_wrap ul li {
+                        position: relative;
+                        float: left;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                        #primary_nav_wrap ul li.current-menu-item {
+                            background: #ddd;
+                        }
+
+                        #primary_nav_wrap ul li:hover {
+                            background: #f6f6f6;
+                        }
+
+                    #primary_nav_wrap ul ul {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background: #fff;
+                        padding: 0;
+                    }
+
+                        #primary_nav_wrap ul ul li {
+                            float: none;
+                            width: 200px;
+                        }
+
+                        #primary_nav_wrap ul ul a {
+                            line-height: 120%;
+                            padding: 10px 15px;
+                        }
+
+                        #primary_nav_wrap ul ul ul {
+                            top: 0;
+                            left: 100%;
+                        }
+
+                    #primary_nav_wrap ul li:hover > ul {
+                        display: block;
+                    }
+
+            dialog {
+                border-radius: 10px;
+                box-shadow: 2px 5px 5px gray;
+                border-color: red;
+                line-height: 2;
+            }
+
+            #tblWinner {
+                top: 15%;
+                margin-left: 31%;
+            }
+        </style>
+    </script>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/flipclock.css" rel="stylesheet" />
+    <script src="~/Scripts/flipclock.js"></script>
+
+@using (Html.BeginForm("ThayDoiHinhNen", "Home", FormMethod.Post, new { EncType = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div style="margin-top: 8%; margin-left: 5%; height: 30%; ">
+        <h3 style="font-weight:bold;color:white;background-color:green;width:10%;border-radius:3px;text-align:center;">
+            Chọn Hình:
+        </h3>
+        <input type="file" name="filehinh" class="btn btn-danger" style="width:100%" />
+        @*</br>*@
+        <input type="submit" class="btn btn-danger" value="THAY ĐỔI" style="margin-top:1%"/>
+    </div>
+}
+    <div style="margin-left:5%">
+        <a href="/Account/Login"><button class="btn btn-success">TRỞ VỀ ADMIN</button></a>
+        </t>
+        @Html.ActionLink("TRỞ VỀ LÒNG QUAY", "Roling", "Home", new { @class = "btn btn-success" })
+    </div>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.get("/Home/HinhNen", function (data) {
+                if (data) {
+                    var content = $('#style').html();
+                    var html = Mustache.render(content, {
+                        Hinh: data
+                    });
+                    $('#content').html(html);
+                }
+            });
+        });
+    </script>
+    @Scripts.Render("~/Scripts/mustache.js")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</body>
+

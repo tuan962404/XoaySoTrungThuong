@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Danh sách nhân viên";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<link href="~/Content/flipclock.css" rel="stylesheet" />
+<script src="~/Scripts/flipclock.js"></script>
+
+<div class="jumbotron">
+    <div class="row">
+        @Html.ActionLink("Xóa danh sách", "DeleteAllPlayer")
+        @*@{
+                var listPlayer = (System.Data.Entity.Core.Objects.ObjectResult<getAllPlayer_Result>)ViewBag.ListPlayer;
+            }*@
+        <div class="col-md-12">
+            <h2 style="color:red;">Danh sách nhân viên</h2>
+            <p>
+                <div class="box-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                        <th style="color:red;">Mã số</th>
+                        <th style="color:red;">Tên Nhân Viên</th>
+                        <th style="color:red;">Tên phòng/ Đơn vị</th>
+                        </thead>
+                        <tbody>
+                            @foreach (var u in ViewBag.ListPlayer)
+                            {
+                                if (u.BelongType.Equals("NV"))
+                                {
+                                    <tr>
+                                        <td>@u.Code</td>
+                                        <td>@u.Name</td>
+                                        <td>@u.Room</td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th style="color:red;">Mã số</th>
+                                <th style="color:red;">Tên Nhân Viên</th>
+                                <th style="color:red;">Tên phòng/ Đơn vị</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </p>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        var clock;
+        var flag = true;
+        $(document).ready(function () {
+            var timer;
+            // Instantiate a counter
+            clock = new FlipClock($('.clock'), 9999, {
+                clockFace: 'Counter',
+                minimumDigits: 4
+            });
+
+            // Attach a click event to a button a increment the clock
+            $('.increment').click(function () {
+                if (flag) {
+                    timer = window.setInterval(function () {
+                        clock.setValue(Math.floor(1000 + Math.random() * 9000));
+
+                    }, 0.1);
+                    flag = false;
+                    $(this).text('Dừng lại');
+                    //clock.setValue(10);
+
+                    // Or you could decrease the clock
+                    // clock.decrement();
+
+                    // Or set it to a specific value
+                    // clock.setValue(x);
+
+                    // Use this code if you want to autoincrement the counter.
+
+                } else {
+                    clearInterval(timer);
+                    flag = true;
+                    $(this).text('Quay số');
+                    clock.setValue("9999");
+                }
+            });
+
+            // Attach a click event to a button a decrement the clock
+            $('.decrement').click(function () {
+                clock.decrement();
+            });
+
+            $('.reset').click(function () {
+                clock.reset();
+            });
+        });
+    </script>
+    </p>
+
+</div>

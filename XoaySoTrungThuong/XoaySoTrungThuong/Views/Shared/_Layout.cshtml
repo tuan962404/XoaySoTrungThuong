@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        #primary_nav_wrap {
+            margin-top: 15px;
+        }
+
+            #primary_nav_wrap ul {
+                list-style: none;
+                position: relative;
+                float: left;
+                margin: 0;
+                padding: 0;
+            }
+
+                #primary_nav_wrap ul a {
+                    display: block;
+                    color: #333;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 32px;
+                    padding: 0 15px;
+                    font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+                }
+
+                #primary_nav_wrap ul li {
+                    position: relative;
+                    float: left;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                    #primary_nav_wrap ul li.current-menu-item {
+                        background: #ddd;
+                    }
+
+                    #primary_nav_wrap ul li:hover {
+                        background: #f6f6f6;
+                    }
+
+                #primary_nav_wrap ul ul {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: #fff;
+                    padding: 0;
+                }
+
+                    #primary_nav_wrap ul ul li {
+                        float: none;
+                        width: 200px;
+                    }
+
+                    #primary_nav_wrap ul ul a {
+                        line-height: 120%;
+                        padding: 10px 15px;
+                    }
+
+                    #primary_nav_wrap ul ul ul {
+                        top: 0;
+                        left: 100%;
+                    }
+
+                #primary_nav_wrap ul li:hover > ul {
+                    display: block;
+                }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:white;border-color:white">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="~/Content/datatables/images/logo.png" />
+            </div>
+            <div class="navbar-collapse collapse primary_nav_wrap">
+                <nav id="primary_nav_wrap">
+                    <ul class="nav navbar-nav">
+                        <li class="current-menu-item">@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+                        <li class="current-menu-item">
+                            <a href="#">Admin / Quản lý </a>
+                            <ul>
+                                <li>
+                                    @Html.ActionLink("Thêm người chơi bằng Excel", "RegisterPlayer", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Danh sách nhân viên", "ViewAllPlayer", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Thêm khách mời bằng Excel", "RegisterGuess", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Danh sách khách mời", "ViewAllGuess", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Quản lý vòng quay", "RoalingManager", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Thêm giải thưởng", "AddNewPrize", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Danh sách giải thưởng", "ListPrize", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Danh sách người chơi trúng giải", "ListPlayerGP", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Danh sách người chơi không hợp lệ", "ListPlayerIV", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Thay đổi hình nền", "ChangeBackground", "Home")
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

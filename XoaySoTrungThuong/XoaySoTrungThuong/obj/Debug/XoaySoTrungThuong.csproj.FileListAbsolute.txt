@@ -1,0 +1,114 @@
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\csc.exe
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\System.Collections.Immutable.dll
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\vbc.exe
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\VBCSCompiler.exe
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\VBCSCompiler.exe.config
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.dll.config
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.dll
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.pdb
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\System.Web.Helpers.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\System.Web.Mvc.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\System.Web.Optimization.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\System.Web.Razor.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\System.Web.WebPages.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\System.Web.WebPages.Deployment.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\System.Web.WebPages.Razor.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Antlr3.Runtime.pdb
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Newtonsoft.Json.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\EntityFramework.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\EntityFramework.SqlServer.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.Owin.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.Owin.Security.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.Owin.Security.Google.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csprojResolveAssemblyReference.cache
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.dll
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.pdb
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.Migrations.InitialCreate.resources
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csproj.GenerateResource.Cache
+c:\users\nguyen\documents\visual studio 2015\Projects\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.Migrations.QuaySo.resources
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.Migrations.InitialCreate.resources
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.Migrations.QuaySo.resources
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csproj.GenerateResource.Cache
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.dll
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.pdb
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\csc.exe
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\System.Collections.Immutable.dll
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\System.Reflection.Metadata.dll
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\vbc.exe
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\VBCSCompiler.exe
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\VBCSCompiler.exe.config
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.dll.config
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.dll
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.pdb
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csprojAssemblyReference.cache
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csproj.CoreCompileInputs.cache
+D:\DỰ ÁN WEB\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csproj.CopyComplete
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\csc.exe
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\System.Collections.Immutable.dll
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\System.Reflection.Metadata.dll
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\vbc.exe
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\VBCSCompiler.exe
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\VBCSCompiler.exe.config
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.dll.config
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.dll
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.pdb
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csprojAssemblyReference.cache
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.Migrations.InitialCreate.resources
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.Migrations.QuaySo.resources
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csproj.GenerateResource.cache
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csproj.CoreCompileInputs.cache
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csproj.CopyComplete
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.dll
+D:\Tuan\VongQuayMayMan\Web Sổ Xố\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.pdb
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\csc.exe
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\System.Collections.Immutable.dll
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\System.Reflection.Metadata.dll
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\vbc.exe
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\VBCSCompiler.exe
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\roslyn\VBCSCompiler.exe.config
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.dll.config
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.dll
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\bin\XoaySoTrungThuong.pdb
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csprojAssemblyReference.cache
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.Migrations.InitialCreate.resources
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.Migrations.QuaySo.resources
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csproj.GenerateResource.cache
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csproj.CoreCompileInputs.cache
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.csproj.CopyComplete
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.dll
+D:\Tuan\Vòng quay may mắn\XoaySoTrungThuong\XoaySoTrungThuong\obj\Debug\XoaySoTrungThuong.pdb

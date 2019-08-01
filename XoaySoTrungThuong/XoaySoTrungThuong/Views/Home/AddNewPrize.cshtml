@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Giải thưởng";
+}
+
+<br />
+<h2>@ViewBag.Title.</h2>
+@Html.ActionLink("Xem danh sách giải thưởng đã có", "ListPrize", "Home")
+@using (Html.BeginForm("AddNewPrize", "Home", FormMethod.Post, new { EncType = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="PrizeNumber">Cơ cấu giải</label>
+        <div class="col-md-10">
+            @Html.TextBox("cocaugiai", "", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="PrizeNumber">Chi tiết giải</label>
+        <div class="col-md-10">
+            @Html.TextBox("chitietgiai", "", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="PrizeNumber">Số lượng giải</label>
+        <div class="col-md-10">
+            @Html.TextBox("number", "", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="PrizeNumber">Ghi chú</label>
+        <div class="col-md-10">
+            @Html.TextBox("ghichu", "", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="PrizeNumber">Áp dụng cho luật chơi</label>
+        <div class="col-md-10">
+            @Html.DropDownList("luatchoi", new SelectList(ViewBag.ListRule, "ID_Rule", "ID_Rule"), "-- Chọn luật chơi --")
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="PrizeNumber">Hình Ảnh</label>
+        <div class="col-md-10">
+            <input type="file" name="file" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Nhập" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

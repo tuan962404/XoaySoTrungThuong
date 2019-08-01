@@ -1,0 +1,850 @@
+﻿@{
+    Layout = null;
+    
+}
+<style>
+   
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quay số trúng thưởng - VÂN HẬU</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+    <div id="content">
+       
+    </div>
+    <script id="style" type="x-tmpl-mustache">
+        <style>
+            body {
+                height: 100%;
+                width: 100%;
+                /*your background image*/
+                /*background-image: url('../../Content/9.jpg');*/
+                background-image: url('{{{Hinh}}}');
+                background-repeat: no-repeat; /*we want to have one single image not a repeated one*/
+                background-size: cover; /*this sets the image to fullscreen covering the whole screen*/
+                /*css hack for ie*/
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.image.jpg',sizingMethod='scale');
+                -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.jpg',sizingMethod='scale')";
+            }
+
+            #primary_nav_wrap {
+                margin-top: 15px;
+            }
+
+                #primary_nav_wrap ul {
+                    list-style: none;
+                    position: relative;
+                    float: left;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                    #primary_nav_wrap ul a {
+                        display: block;
+                        color: #333;
+                        text-decoration: none;
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 32px;
+                        padding: 0 15px;
+                        font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+                    }
+
+                    #primary_nav_wrap ul li {
+                        position: relative;
+                        float: left;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                        #primary_nav_wrap ul li.current-menu-item {
+                            background: #ddd;
+                        }
+
+                        #primary_nav_wrap ul li:hover {
+                            background: #f6f6f6;
+                        }
+
+                    #primary_nav_wrap ul ul {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background: #fff;
+                        padding: 0;
+                    }
+
+                        #primary_nav_wrap ul ul li {
+                            float: none;
+                            width: 200px;
+                        }
+
+                        #primary_nav_wrap ul ul a {
+                            line-height: 120%;
+                            padding: 10px 15px;
+                        }
+
+                        #primary_nav_wrap ul ul ul {
+                            top: 0;
+                            left: 100%;
+                        }
+
+                    #primary_nav_wrap ul li:hover > ul {
+                        display: block;
+                    }
+
+            dialog {
+                border-radius: 10px;
+                box-shadow: 2px 5px 5px gray;
+                border-color: red;
+                line-height: 2;
+            }
+
+            #tblWinner {
+                top: 15%;
+                margin-left: 31%;
+            }
+        </style>
+    </script>
+</head>
+<body style="background-color: red;">
+    <div class="container body-content">
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <link href="~/Content/flipclock.css" rel="stylesheet" />
+        <script src="~/Scripts/flipclock.js"></script>  
+        <br />
+        <div>
+
+            @{
+                var listPlayer = ViewBag.ListPlayer;
+                var listPlayerGP = ViewBag.ListPlayerGP;
+
+
+            }
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="lead" style="margin-top:30%"></p>
+                    <div class="clock" style="margin:2em;"></div>
+
+                    <div style="background-image: url('../../Content/nutquayso.png');width:200px;height:190px;margin-left:15%;cursor:pointer" class="increment" id="nutquay">
+                    </div>
+                </div>
+
+                <div class="col-md-7
+                    <p>
+                        <div class=" box-body" style="margin-top:13%;margin-left:92px;width:58%;height:310px;overflow:auto">
+                        <table id="sort" class="table table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th style="color:red;width:60px;text-align:center">Mã số </th>
+                                    <th style="color: red; width: 200px; text-align: center"><span  onclick="SortTen()" style="cursor:pointer">Tên</span></th>
+                                    <th style="color: red; width: 180px; text-align: center">Tên phòng/ Đơn vị</th>
+                                    <th style="color: red; text-align: center">Đợt</th>
+                                    <th style="color: red; text-align: center">Lần</th>
+                                    <th style="color: red; text-align: center"><span onclick="SortGiai()" style="cursor:pointer">Giải</span> </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblLoad">
+                                @*@foreach (var i in listPlayerGP)
+                                {
+                                    <tr>
+                                        <th style="text-align: center">@i.Code</th>
+                                        <th style="text-align: center">@i.Name</th>
+                                        <th style="text-align: center">@i.Room</th>
+
+                                        <th style="text-align: center">@i.Dot</th>
+                                        <th style="text-align: center">@i.Lan</th>
+                                        <th style="text-align: center">@i.Giai</th>
+                                    </tr>
+                                }*@
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th style="color: red; text-align: center">Mã số</th>
+                                    <th style="color: red; text-align: center">Tên</th>
+                                    <th style="color: red; text-align: center">Tên phòng/ Đơn vị</th>
+                                    <th style="color: red; text-align: center">Đợt</th>
+                                    <th style="color: red; text-align: center">Lần</th>
+                                    <th style="color: red; text-align: center">Giải</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                    </p>
+</div>
+
+            </div>
+            <div style="margin-top:3%;color:white">
+
+                <h3 style="float: left; margin-left: 10%; color: yellow; font-weight: bold; font-style: italic ">
+                    Đợt Quay:
+                    <select id="DotQuay" class="btn btn-success" style="font-size:large">
+                        <option hidden>Chọn</option>
+                    </select>
+
+                </h3>
+
+                <h3 style="float: left; margin-left: 5%; color: yellow; font-weight: bold; font-style: italic; ">
+                    Lần Quay:
+                    <select id="LanQuay" class="btn btn-success" style="font-size:large">
+                        <option hidden>Chọn</option>
+                    </select>
+                </h3>
+
+                <h3 style="float: left; margin-left: 5%; color: yellow; font-weight: bold; font-style: italic; ">
+                    Giải:
+                    <select id="GiaiThuong" class="btn btn-success" style="font-size:large">
+                        <option hidden>Chọn</option>
+                    </select>
+                </h3>
+
+            </div>
+
+            <script type="text/javascript">
+                var clock;
+
+
+                $(document).ready(function () {
+                    //$('#dtBasicExample').DataTable();
+                    //$('.dataTables_length').addClass('bs-select');
+
+                    $.get("/Home/HinhNen", function (data) {
+                        if (data) {
+                            var content = $('#style').html();
+                            var html = Mustache.render(content, {
+                                Hinh: data
+                            });
+                            $('#content').html(html);
+                        }
+                    });
+
+
+                    var timer;
+                    // Instantiate a counter
+                    clock = new FlipClock($('.clock'), 9999, {
+                        clockFace: 'Counter',
+                        minimumDigits: 4
+                    });
+
+                    // Attach a click event to a button a decrement the clock
+                    $('.decrement').click(function () {
+                        clock.decrement();
+                    });
+
+                    $('.reset').click(function () {
+                        clock.reset();
+                    });
+
+                    //---------------------------------------------------
+
+                    _getDotQuay();
+                    $("#DotQuay").on('change', function () {
+                        var id_stage = $(this).val();
+                        if (id_stage != '' && id_stage != undefined) {
+                            _getLanQuay(id_stage);
+                        }
+
+                    });
+
+                    $("#LanQuay").on('change', function () {
+                        var id = $(this).val();
+                        if (id != '' && id != undefined) {
+                            _getGiaiThuong(id);
+                        }
+                    });
+
+                    var id_GT = 0;
+                    $('#GiaiThuong').on('change', function () {
+                        id_GT = $(this).val();
+                        getSoLanQuay(id_GT);
+                        KiemTraLanQuay(id_GT);
+                    });
+
+                    var cfmChonGiaiQuay = document.querySelector("#cfmChonGiaiQuay");
+                    $('.increment').click(function () {
+                        if (id_GT == 0) {
+                            cfmChonGiaiQuay.showModal();
+                            $('#Close_cfmChonGiaiQuay').click(function () {
+                                cfmChonGiaiQuay.close();
+                            });
+                        }
+                    });
+
+                });
+
+                //--------------------------------------------------------------------
+
+                var dotquayURL = "/Home/getDotQuay";
+                var lanquayURL = "/Home/getLanQuay";
+                var giaithuongURL = "/Home/getGiaiThuong";
+
+                function _getDotQuay() {
+                    $.get(dotquayURL, function (data) {
+                        if (data) {
+                            var html = '';
+                            html = '<option hidden>Chọn</option>';
+                            $.each(data, function (key, item) {
+                                html += '<option value=' + item + '>' + item + '</option>'
+                            });
+                            $('#DotQuay').html(html);
+                        }
+                    });
+                }
+
+                function _getLanQuay(stage) {
+                    $.ajax({
+                        url: lanquayURL,
+                        data: { stage: stage },
+                        dataType: "json",
+                        type: "GET",
+                        success: function (response) {
+                            if (response != null) {
+                                var html = '';
+                                html = '<option hidden>Chọn</option>';
+                                $.each(response, function (key, item) {
+                                    html += '<option value="' + item.ID_Rule + '">' + item.RoundNumber + '</option>'
+                                });
+                                $('#LanQuay').html(html);
+                            }
+                        }
+                    });
+                }
+
+                function _getGiaiThuong(id_rule) {
+                    $.ajax({
+                        url: giaithuongURL,
+                        data: { id_rule: id_rule },
+                        dataType: "json",
+                        type: "GET",
+                        success: function (response) {
+                            if (response != null) {
+                                var html = '';
+                                html = '<option hidden>Chọn</option>';
+                                $.each(response, function (key, item) {
+                                    html += '<option value="' + item.ID_Prize + '">' + item.CoCauGiai + '</option>'
+                                });
+                                $('#GiaiThuong').html(html);
+                            }
+                        }
+                    });
+                }
+
+                function SortTen() {
+                    $.ajax({
+                        url: "/Home/SortTen",
+                        type: "GET",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response != null) {
+                                var html = '';
+                                var template = $('#data-load').html();
+                                $.each(response, function (i, item) {
+                                    html += Mustache.render(template, {
+                                        Ma: item.Code,
+                                        Ten: item.Name,
+                                        DonVi: item.Room,
+                                        Dot: item.Dot,
+                                        Lan: item.Lan,
+                                        Giai: item.Giai
+                                    });
+                                });
+                                $('#tblLoad').html(html);
+                            }
+                        }
+                    });
+                }
+
+                function SortGiai() {
+                    $.ajax({
+                        url: "/Home/SortGiai",
+                        type: "GET",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response != null) {
+                                var html = '';
+                                var template = $('#data-load').html();
+                                $.each(response, function (i, item) {
+                                    html += Mustache.render(template, {
+                                        Ma: item.Code,
+                                        Ten: item.Name,
+                                        DonVi: item.Room,
+                                        Dot: item.Dot,
+                                        Lan: item.Lan,
+                                        Giai: item.Giai
+                                    });
+                                });
+                                $('#tblLoad').html(html);
+                            }
+                        }
+                    });
+                }
+
+                function getSoLanQuay(id) {
+                    var solanquay = 0;
+                    var temp = 0;
+                    var status = false;
+                    var cfmSoLanQuay = document.querySelector('#cfmSoLanQuay');
+                    var cfmSoLanConLai = document.querySelector('#cfmSoLanConLai');
+                    $.ajax({
+                        url: "/Home/getSoLanQuay",
+                        data: { id: id },
+                        dataType: "json",
+                        type: "GET",
+                        success: function (response) {
+                            if (response != null) {
+                                $.each(response, function (i, item) {
+                                    temp = item.Number;
+                                    status = item.Status;
+                                });
+                                if (status != true) {
+                                    $.ajax({
+                                        url: "/Home/getCount",
+                                        data: { id: id },
+                                        dataType: "json",
+                                        type: "GET",
+                                        success: function (response) {
+                                            if (response != null) {
+                                                $.each(response, function (i, item) {
+                                                    solanquay = item.SoLanDaQuay;
+                                                });
+
+                                                if (solanquay == 0) {
+                                                    var html = '<div style="color:red;font-size:larger;font-weight:bold;text-align:center">BẠN CÓ ' + temp + ' LẦN QUAY!</br>MỜI BẠN QUAY</div>' +
+                                                        '<button class="btn btn-success" id="Close_cfmSoLanQuay" style="margin-left:40%;margin-top:5%">OK</button>';
+                                                    $('#cfmSoLanQuay').html(html);
+                                                    cfmSoLanQuay.showModal();
+                                                    $('#Close_cfmSoLanQuay').click(function () {
+                                                        cfmSoLanQuay.close();
+                                                    });
+                                                }
+                                                else {
+                                                    var SLQ = temp - solanquay;
+                                                    //alert("Bạn Còn " + solanquay + " Lần Quay. Mời Bạn Quay");
+                                                    var html = '<div style="color:red;font-size:larger;font-weight:bold;text-align:center">BẠN CÒN LẠI ' + SLQ + ' LẦN QUAY!</br>MỜI BẠN QUAY</div>' +
+                                                        '<button class="btn btn-success" id="Close_cfmSoLanConLai" style="margin-left:40%;margin-top:5%">OK</button>';
+                                                    $('#cfmSoLanConLai').html(html);
+                                                    cfmSoLanConLai.showModal();
+                                                    $('#Close_cfmSoLanConLai').click(function () {
+                                                        cfmSoLanConLai.close();
+                                                    });
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    });
+                }
+
+                function KiemTraLanQuay(id) {
+                    $.ajax({
+                        url: "/Home/getSoLanQuay",
+                        data: { id: id },
+                        dataType: "json",
+                        type: "GET",
+                        success: function (response) {
+                            var id_tam = null;
+                            var flag = true;
+                            var count = null;
+                            var solanquay = 0;
+                            var status = false;
+                            var flag_player = false;
+                            var arr = new Array();
+                            var temp = "";
+                            var rand = "";
+                            var id_rule = null;
+                            var SoKMTrungGiai = 0;
+                            var belongtype = "";
+                            var status_rule = false;
+                            var id_getSoKMDTG = null;
+                            var sokm = null;
+                            var hinh = "";
+                            var tengiai = "";
+                            var maso = "";
+                            var ten = "";
+                            var dotquay = null;
+                            var lanquay = null;
+                            var cocaugiai = "";
+                            var donvi = "";
+                            var cfmGiaiDaQuay = document.querySelector('#cfmGiaiDaQuay');
+                            var cfmQuayDuGiai = document.querySelector('#cfmQuayDuGiai');
+                            var tblWinner = document.querySelector('#tblWinner');
+                            var cfmHuy = document.querySelector('#cfmHuy');
+                            var cfmThem = document.querySelector('#cfmThem');
+
+                            if (response != null) {
+                                $.each(response, function (i, item) {
+                                    solanquay = item.Number;
+                                    status = item.Status;
+                                    id_rule = item.ID_Rule;
+                                    hinh = item.HinhAnh;
+                                    cocaugiai = item.CoCauGiai;
+                                    tengiai = item.ChiTietGiai;
+                                });
+                                if (status == true) {
+                                    cfmGiaiDaQuay.showModal();
+                                    $('#Close_cfmGiaiDaQuay').click(function () {
+                                        cfmGiaiDaQuay.close();
+                                    });
+                                    $(".increment").off();
+                                }
+                                $.ajax({
+                                    url: "/Home/getGuessNumber",
+                                    data: { id: id_rule },
+                                    dataType: "json",
+                                    type: "GET",
+                                    success: function (response) {
+                                        if (response != null) {
+                                            $.each(response, function (i, item) {
+                                                SoKMTrungGiai = item.GuessNumber;
+                                                status_rule = item.Status;
+                                                dotquay = item.Stage;
+                                                lanquay = item.RoundNumber;
+                                            });
+                                        }
+                                    }
+                                });
+                                $.ajax({
+                                    url: "/Home/getCount",
+                                    data: { id: id },
+                                    dataType: "json",
+                                    type: "GET",
+                                    success: function (response) {
+                                        if (response != null) {
+                                            $.each(response, function (i, item) {
+                                                count = item.SoLanDaQuay;
+                                            });
+                                            if (status != true) {
+                                                $.ajax({
+                                                    url: "/Home/getFlag",
+                                                    success: function (response) {
+                                                        if (response != null) {
+                                                            $.each(response, function (i, item) {
+                                                                temp = item.Code;
+                                                                arr.push(temp)
+                                                            });
+                                                            if (arr.length > 0) {
+                                                                rand = arr[Math.floor(Math.random() * arr.length)];
+                                                            }
+                                                        }
+                                                    }
+                                                });
+                                                $('.increment').off('click').on('click', function () {
+                                                    $.ajax({
+                                                        url: "/Home/getSoKMDaTrungGiai",
+                                                        data: { id: id_rule },
+                                                        dataType: "json",
+                                                        type: "GET",
+                                                        success: function (response) {
+                                                            if (response != null) {
+                                                                $.each(response, function (i, item) {
+                                                                    sokm = item.SoKMDaTrungGiai;
+                                                                });
+                                                                if (count < solanquay) {
+                                                                    if (flag) {
+                                                                        //alert(status_rule)
+                                                                        if (status_rule == true) {
+                                                                            if (sokm < SoKMTrungGiai) {
+                                                                                //alert("A");
+                                                                                timer = window.setInterval(function () {
+                                                                                    clock.setValue(Math.floor(1000 + Math.random() * 9000));
+                                                                                }, 0.1);
+                                                                                flag = false;
+                                                                                $.ajax({
+                                                                                    url: "/Home/getFlag",
+                                                                                    success: function (response) {
+                                                                                        if (response != null) {
+                                                                                            $.each(response, function (i, item) {
+                                                                                                temp = item.Code;
+                                                                                                arr.push(temp)
+                                                                                            });
+                                                                                            if (arr.length > 0) {
+                                                                                                rand = arr[Math.floor(Math.random() * arr.length)];
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                });
+                                                                            }
+                                                                            else {
+                                                                                //alert("B");
+                                                                                timer = window.setInterval(function () {
+                                                                                    clock.setValue(Math.floor(1000 + Math.random() * 9000));
+                                                                                }, 0.1);
+                                                                                flag = false;
+                                                                                $.ajax({
+                                                                                    url: "/Home/getPlayerNV",
+                                                                                    success: function (response) {
+                                                                                        if (response != null) {
+                                                                                            $.each(response, function (i, item) {
+                                                                                                temp = item.Code;
+                                                                                                arr.push(temp)
+                                                                                            });
+                                                                                            if (arr.length > 0) {
+                                                                                                rand = arr[Math.floor(Math.random() * arr.length)];
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                });
+                                                                            }
+                                                                        }
+                                                                        else {
+                                                                            //alert("C")
+                                                                            timer = window.setInterval(function () {
+                                                                                clock.setValue(Math.floor(1000 + Math.random() * 9000));
+                                                                            }, 0.1);
+                                                                            flag = false;
+                                                                            $.ajax({
+                                                                                url: "/Home/getFlag",
+                                                                                success: function (response) {
+                                                                                    if (response != null) {
+                                                                                        $.each(response, function (i, item) {
+                                                                                            temp = item.Code;
+                                                                                            arr.push(temp)
+                                                                                        });
+                                                                                        if (arr.length > 0) {
+                                                                                            rand = arr[Math.floor(Math.random() * arr.length)];
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            });
+                                                                        }
+                                                                    }
+                                                                    else {
+                                                                        $.ajax({
+                                                                            url: "/Home/KiemTraKM",
+                                                                            //data: { code: "0001" },
+                                                                            data: { code: rand },
+                                                                            dataType: "json",
+                                                                            type: "GET",
+                                                                            success: function (response) {
+                                                                                if (response != null) {
+                                                                                    $.each(response, function (i, item) {
+                                                                                        belongtype = item.BelongType;
+                                                                                        maso = item.Code;
+                                                                                        ten = item.Name;
+                                                                                        donvi = item.Room;
+                                                                                    });
+                                                                                    if (belongtype == "KM") {
+                                                                                        $.ajax({
+                                                                                            url: "/Home/UpdateSoKMDaTrungGiai",
+                                                                                            data: { id: id_rule },
+                                                                                            dataType: "json",
+                                                                                            type: "GET"
+                                                                                        });
+                                                                                    }
+                                                                                    var template = $('#data-template').html();
+                                                                                    var soure = Mustache.render(template, {
+                                                                                        Hinh: hinh,
+                                                                                        TenGiai: tengiai,
+                                                                                        MaSo: maso,
+                                                                                        Ten: ten
+                                                                                    });
+                                                                                    $('#tbldata').html(soure);
+                                                                                }
+                                                                            }
+                                                                        });
+                                                                        $('#iconYes').off().on('click', function () {
+                                                                            $.ajax({
+                                                                                url: "/Home/UpdatePlayerGetPrize",
+                                                                                data: {
+                                                                                    code: rand,
+                                                                                    dotquay: dotquay,
+                                                                                    lanquay: lanquay,
+                                                                                    giaiquay: cocaugiai
+                                                                                }
+                                                                            });
+                                                                            $.ajax({
+                                                                                url: "/Home/UpdateSoLanDaQuay",
+                                                                                data: { id: id },
+                                                                                dataType: "json",
+                                                                                type: "GET"
+                                                                            });
+                                                                            count++;
+                                                                            if (count == solanquay) {
+                                                                                $.ajax({
+                                                                                    url: "/Home/UpdatePrize",
+                                                                                    data: { id: id },
+                                                                                    dataType: "json",
+                                                                                    type: "GET"
+                                                                                });
+                                                                                cfmQuayDuGiai.showModal();
+                                                                                $('#Close_cfmQuayDuGiai').click(function () {
+                                                                                    cfmQuayDuGiai.close();
+                                                                                });
+                                                                            }
+                                                                            cfmThem.showModal();
+                                                                        });
+
+                                                                        $('#close_cfmThem').off().on('click', function () {
+                                                                            $.ajax({
+                                                                                url: "/Home/getAllPlayerGP",
+                                                                                type: "GET",
+                                                                                dataType: "json",
+                                                                                success: function (response) {
+                                                                                    if (response != null) {
+                                                                                        var html = '';
+                                                                                        var template = $('#data-load').html();
+                                                                                        $.each(response, function (i, item) {
+                                                                                            html += Mustache.render(template, {
+                                                                                                Ma: item.Code,
+                                                                                                Ten: item.Name,
+                                                                                                DonVi: item.Room,
+                                                                                                Dot: item.Dot,
+                                                                                                Lan: item.Lan,
+                                                                                                Giai: item.Giai
+                                                                                            });
+                                                                                        });
+                                                                                        $('#tblLoad').html(html);
+                                                                                    }
+                                                                                }
+                                                                            });
+                                                                            cfmThem.close();
+                                                                            tblWinner.close();
+                                                                        });
+
+                                                                        $('#iconNo').off().on('click', function () {
+                                                                            cfmHuy.showModal();
+                                                                            $('#Close_cfmHuy').off().on('click', function () {
+                                                                                $.ajax({
+                                                                                    url: "/Home/UpdatePlayerInvalid",
+                                                                                    data: {
+                                                                                        code: rand,
+                                                                                        dotquay: dotquay,
+                                                                                        lanquay: lanquay,
+                                                                                        giaiquay: cocaugiai
+                                                                                    }
+                                                                                });
+                                                                                tblWinner.close();
+                                                                                cfmHuy.close();
+                                                                            });
+
+                                                                            $('#cancel').click(function () {
+                                                                                cfmHuy.close();
+                                                                            });
+                                                                        });
+                                                                        clearInterval(timer);
+                                                                        flag = true;
+                                                                        clock.setValue(rand);
+                                                                        tblWinner.showModal();
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            }
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            </script>
+            </p>
+        </div>
+
+        <dialog id="tblWinner">
+            @*<button style="float: right; border-radius: 2px; font-size: 10px" class="exit">Đóng</button>*@
+
+            <table id="example2" class="table table-bordered" style="border:0.5px">
+
+                <thead>
+                    <p style="color: green; font-weight: bold; font-size: xx-large; text-shadow: green 0.1em 0.1em 0.2em">CHÚC MỪNG NGƯỜI CHƠI TRÚNG GIẢI</p>
+                </thead>
+
+                <tbody id="tbldata"></tbody>
+
+                <tfoot>
+                </tfoot>
+            </table>
+            <div style="margin-left:39%">
+                <img src="../Content/iconYes.png" id="iconYes" style="cursor:pointer" />
+
+                <img src="../Content/iconNo.png" id="iconNo" style="margin-left: 15%; cursor: pointer" />
+            </div>
+        </dialog>
+
+        <dialog id="cfmChonGiaiQuay" style="border-color:red;box-shadow:10px">
+            <div style="color:red;font-size:larger;font-weight:bold;text-align:center">BẠN VUI LÒNG CHỌN GIẢI QUAY!</div>
+            <button class="btn btn-success" id="Close_cfmChonGiaiQuay" style="margin-left:40%;margin-top:5%">OK</button>
+        </dialog>
+
+        <dialog id="cfmSoLanQuay" style="border-color:red;box-shadow:10px"></dialog>
+
+        <dialog id="cfmSoLanConLai" style="border-color:red;box-shadow:10px"></dialog>
+
+        <dialog id="cfmGiaiDaQuay" style="border-color:red;box-shadow:10px">
+            <div style="color: red; font-size: larger; font-weight: bold; text-align: center">GIẢI NÀY ĐÃ ĐƯỢC QUAY!</div>
+            <button class="btn btn-success" id="Close_cfmGiaiDaQuay" style="margin-left:40%;margin-top:5%">OK</button>
+        </dialog>
+
+        <dialog id="cfmQuayDuGiai" style="border-color:red;box-shadow:10px">
+            <div style="color: red; font-size: larger; font-weight: bold; text-align: center">BẠN ĐÃ QUAY ĐỦ GIẢI!</br>VUI LÒNG CHỌN GIẢI MỚI!</div>
+            <button class="btn btn-success" id="Close_cfmQuayDuGiai" style="margin-left:40%;margin-top:5%">OK</button>
+        </dialog>
+
+        <script id="data-template" type="x-tmpl-mustache">
+            <tr>
+                <td rowspan="3">
+                    <img src="{{Hinh}}" style="margin-left:25%">
+                    <p style="color:black;text-align:center;margin-top:7%;font-size:larger;font-weight:bold">
+                        {{TenGiai}}
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:150px">
+                <td style="color: red; font-weight: bold">
+                    <p style="text-align:center"> Mã số nhân viên</p>
+                    <p style="color:black;text-align:center;margin-top:7%;font-size:larger">
+                        {{MaSo}}
+                    </p>
+                </td>
+            </tr>
+            <tr style="height: 150px">
+                <td style="color:red;font-weight:bold">
+                    <p style="text-align:center">Tên người chơi</p>
+                    <p style="color: black; text-align: center; margin-top: 7%; font-size: larger">
+                        {{Ten}}
+                    </p>
+                </td>
+            </tr>
+        </script>
+
+        <dialog id="cfmHuy">
+            <div style="color:red;font-size:larger;font-weight:bold;text-align:center">BẠN CÓ CHẮC KHÔNG CÓ NGƯỜI CHƠI NHẬN GIẢI???</div>
+            <button class="btn btn-success" id="Close_cfmHuy" style="margin-left:37.5%;margin-top:5%">OK</button>
+            <button class="btn btn-success" id="cancel" style="margin-left:2%;margin-top:5%">CANCEL</button>
+        </dialog>
+
+        <script type="x-tmpl-mustache" id="data-load">
+            <tr>
+                <th style="text-align: center">{{Ma}}</th>
+                <th style="text-align: center">{{Ten}}</th>
+                <th style="text-align: center">{{DonVi}}</th>
+                <th style="text-align: center">{{Dot}}</th>
+                <th style="text-align: center">{{Lan}}</th>
+                <th style="text-align: center">{{Giai}}</th>
+            </tr>
+        </script>
+
+        <dialog id="cfmThem">
+            <div style="color:red;font-size:larger;font-weight:bold;text-align:center">
+                CHÚC MỪNG NGƯỜI CHƠI ĐÃ NHẬN GIẢI!</br>
+                <img src="~/Content/hopqua.png" />
+            </div>
+            <button class="btn btn-success" id="close_cfmThem" style="margin-left:44%;margin-top:5%">OK</button>
+        </dialog>
+
+        @Scripts.Render("~/Scripts/mustache.js")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

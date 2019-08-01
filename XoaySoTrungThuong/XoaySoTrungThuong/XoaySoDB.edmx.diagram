@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ad49aab82b3446c8a06f5ce902d95c25" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="XoaySoTrungThuongModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XoaySoTrungThuongModel.Prize" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="XoaySoTrungThuongModel.RuleToPlay" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="XoaySoTrungThuongModel.FK__Prize__ID_Rule__25869641" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="XoaySoTrungThuongModel.LogQuay" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="XoaySoTrungThuongModel.Player" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="XoaySoTrungThuongModel.PlayerGP" Width="1.5" PointX="8.375" PointY="6.75" />
+        <EntityTypeShape EntityType="XoaySoTrungThuongModel.PlayerIV" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="XoaySoTrungThuongModel.HinhNen" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

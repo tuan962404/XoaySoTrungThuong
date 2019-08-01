@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="XoaySoTrungThuongModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prize">
+    <Key>
+      <PropertyRef Name="ID_Prize" />
+    </Key>
+    <Property Name="ID_Prize" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CoCauGiai" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ChiTietGiai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="Int32" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Rule" Type="Int32" />
+    <NavigationProperty Name="RuleToPlay" Relationship="Self.FK__Prize__ID_Rule__25869641" FromRole="Prize" ToRole="RuleToPlay" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="SoLanDaQuay" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RuleToPlay">
+    <Key>
+      <PropertyRef Name="ID_Rule" />
+    </Key>
+    <Property Name="ID_Rule" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoundNumber" Type="Int32" />
+    <Property Name="PrizeNumber" Type="Int32" />
+    <Property Name="GuessNumber" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Prizes" Relationship="Self.FK__Prize__ID_Rule__25869641" FromRole="RuleToPlay" ToRole="Prize" />
+    <Property Name="Stage" Type="Int32" />
+    <Property Name="SoKMDaTrungGiai" Type="Int32" />
+  </EntityType>
+  <Association Name="FK__Prize__ID_Rule__25869641">
+    <End Role="RuleToPlay" Type="Self.RuleToPlay" Multiplicity="0..1" />
+    <End Role="Prize" Type="Self.Prize" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleToPlay">
+        <PropertyRef Name="ID_Rule" />
+      </Principal>
+      <Dependent Role="Prize">
+        <PropertyRef Name="ID_Rule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="XoaySoTrungThuongEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Prizes" EntityType="Self.Prize" />
+    <EntitySet Name="RuleToPlays" EntityType="Self.RuleToPlay" />
+    <AssociationSet Name="FK__Prize__ID_Rule__25869641" Association="Self.FK__Prize__ID_Rule__25869641">
+      <End Role="RuleToPlay" EntitySet="RuleToPlays" />
+      <End Role="Prize" EntitySet="Prizes" />
+    </AssociationSet>
+    <FunctionImport Name="getAllPlayer" ReturnType="Collection(XoaySoTrungThuongModel.getAllPlayer_Result)" />
+    <FunctionImport Name="deleteAllPlayer" />
+    <FunctionImport Name="deleteAllGuess" />
+    <FunctionImport Name="GetAllRule" ReturnType="Collection(XoaySoTrungThuongModel.GetAllRule_Result)" />
+    <FunctionImport Name="updateRuleToPlay">
+      <Parameter Name="ID_Rule" Mode="In" Type="Int32" />
+      <Parameter Name="RoundNumber" Mode="In" Type="Int32" />
+      <Parameter Name="PrizeNumber" Mode="In" Type="Int32" />
+      <Parameter Name="GuessNumber" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="deleteRuleToPlay">
+      <Parameter Name="ID_Rule" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getAllPrize" ReturnType="Collection(XoaySoTrungThuongModel.getAllPrize_Result)" />
+    <FunctionImport Name="insertPrize">
+      <Parameter Name="CoCauGiai" Mode="In" Type="String" />
+      <Parameter Name="ChiTietGiai" Mode="In" Type="String" />
+      <Parameter Name="Number" Mode="In" Type="Int32" />
+      <Parameter Name="GhiChu" Mode="In" Type="String" />
+      <Parameter Name="HinhAnh" Mode="In" Type="String" />
+      <Parameter Name="ID_Rule" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="deletePrize">
+      <Parameter Name="ID_Prize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="LogQuays" EntityType="XoaySoTrungThuongModel.LogQuay" />
+    <FunctionImport Name="insertLogQuay">
+      <Parameter Name="CurrentID_Rule" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Player" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Prize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Players" EntityType="XoaySoTrungThuongModel.Player" />
+    <FunctionImport Name="updateFlagForPlayer">
+      <Parameter Name="ID_Player" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="PlayerGPs" EntityType="XoaySoTrungThuongModel.PlayerGP" />
+    <EntitySet Name="PlayerIVs" EntityType="XoaySoTrungThuongModel.PlayerIV" />
+    <FunctionImport Name="CountAllPlayer" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="getAllPlayerGP" ReturnType="Collection(XoaySoTrungThuongModel.getAllPlayerGP_Result)" />
+    <FunctionImport Name="getAllPlayerIV" ReturnType="Collection(XoaySoTrungThuongModel.getAllPlayerIV_Result)" />
+    <FunctionImport Name="getDotQuay" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="getGiaiThuong" ReturnType="Collection(XoaySoTrungThuongModel.getGiaiThuong_Result)" />
+    <FunctionImport Name="getLanQuay" ReturnType="Collection(XoaySoTrungThuongModel.getLanQuay_Result)" />
+    <FunctionImport Name="getAllDotQuay" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="DotQuay" ReturnType="Collection(XoaySoTrungThuongModel.DotQuay_Result)" />
+    <FunctionImport Name="LanQuay" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GiaiThuong" ReturnType="Collection(String)" />
+    <FunctionImport Name="PrizeRule" ReturnType="Collection(XoaySoTrungThuongModel.PrizeRule_Result)" />
+    <FunctionImport Name="getRuleToPlay" ReturnType="Collection(XoaySoTrungThuongModel.getRuleToPlay_Result)" />
+    <FunctionImport Name="getPrize" ReturnType="Collection(XoaySoTrungThuongModel.getPrize_Result)" />
+    <FunctionImport Name="getRule" ReturnType="Collection(XoaySoTrungThuongModel.getRule_Result)" />
+    <FunctionImport Name="getSoLanDaQuay" ReturnType="Collection(XoaySoTrungThuongModel.getSoLanDaQuay_Result)" />
+    <FunctionImport Name="getPlayerGP" ReturnType="Collection(XoaySoTrungThuongModel.getPlayerGP_Result)" />
+    <FunctionImport Name="getPlayerIV" ReturnType="Collection(XoaySoTrungThuongModel.getPlayerIV_Result)" />
+    <FunctionImport Name="deletePlayerGP" />
+    <FunctionImport Name="deletePlayerIV" />
+    <EntitySet Name="HinhNens" EntityType="XoaySoTrungThuongModel.HinhNen" />
+  </EntityContainer>
+  <ComplexType Name="getAllPlayer_Result">
+    <Property Type="Int32" Name="ID_Player" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Room" Nullable="true" />
+    <Property Type="String" Name="BelongType" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="GetAllRule_Result">
+    <Property Type="Int32" Name="ID_Rule" Nullable="false" />
+    <Property Type="Int32" Name="RoundNumber" Nullable="true" />
+    <Property Type="Int32" Name="PrizeNumber" Nullable="true" />
+    <Property Type="Int32" Name="GuessNumber" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getAllPrize_Result">
+    <Property Type="Int32" Name="ID_Prize" Nullable="false" />
+    <Property Type="String" Name="CoCauGiai" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ChiTietGiai" Nullable="true" />
+    <Property Type="Int32" Name="Number" Nullable="true" />
+    <Property Type="String" Name="GhiChu" Nullable="true" />
+    <Property Type="String" Name="HinhAnh" Nullable="true" />
+    <Property Type="Int32" Name="ID_Rule" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="LogQuay">
+    <Key>
+      <PropertyRef Name="ID_LogQuay" />
+    </Key>
+    <Property Name="ID_LogQuay" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CurrentID_Rule" Type="Int32" />
+    <Property Name="ID_Player" Type="Int32" />
+    <Property Name="ID_Prize" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="ID_Player" />
+    </Key>
+    <Property Name="ID_Player" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Room" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BelongType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Flag" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PlayerGP">
+    <Key>
+      <PropertyRef Name="ID_PlayerGP" />
+    </Key>
+    <Property Name="ID_PlayerGP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Room" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BelongType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Flag" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Dot" Type="Int32" />
+    <Property Name="Lan" Type="Int32" />
+    <Property Name="Giai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PlayerIV">
+    <Key>
+      <PropertyRef Name="ID_PlayerIV" />
+    </Key>
+    <Property Name="ID_PlayerIV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Room" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BelongType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Flag" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Dot" Type="Int32" />
+    <Property Name="Lan" Type="Int32" />
+    <Property Name="Giai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="getAllPlayerGP_Result">
+    <Property Type="Int32" Name="ID_PlayerGP" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Room" Nullable="true" />
+    <Property Type="String" Name="BelongType" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Flag" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="getAllPlayerIV_Result">
+    <Property Type="Int32" Name="ID_PlayerIV" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Room" Nullable="true" />
+    <Property Type="String" Name="BelongType" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Flag" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="getGiaiThuong_Result">
+    <Property Type="Int32" Name="ID_Prize" Nullable="false" />
+    <Property Type="String" Name="CoCauGiai" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ChiTietGiai" Nullable="true" />
+    <Property Type="Int32" Name="Number" Nullable="true" />
+    <Property Type="String" Name="GhiChu" Nullable="true" />
+    <Property Type="String" Name="HinhAnh" Nullable="true" />
+    <Property Type="Int32" Name="ID_Rule" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getLanQuay_Result">
+    <Property Type="Int32" Name="ID_Rule" Nullable="false" />
+    <Property Type="Int32" Name="RoundNumber" Nullable="true" />
+    <Property Type="Int32" Name="PrizeNumber" Nullable="true" />
+    <Property Type="Int32" Name="GuessNumber" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="Stage" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DotQuay_Result">
+    <Property Type="Int32" Name="ID_Rule" Nullable="false" />
+    <Property Type="Int32" Name="RoundNumber" Nullable="true" />
+    <Property Type="Int32" Name="PrizeNumber" Nullable="true" />
+    <Property Type="Int32" Name="GuessNumber" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="Stage" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PrizeRule_Result">
+    <Property Type="Int32" Name="ID_Prize" Nullable="false" />
+    <Property Type="String" Name="CoCauGiai" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ChiTietGiai" Nullable="true" />
+    <Property Type="Int32" Name="Number" Nullable="true" />
+    <Property Type="String" Name="GhiChu" Nullable="true" />
+    <Property Type="String" Name="HinhAnh" Nullable="true" />
+    <Property Type="Int32" Name="ID_Rule" Nullable="true" />
+    <Property Type="Int32" Name="ID_Rule1" Nullable="false" />
+    <Property Type="Int32" Name="RoundNumber" Nullable="true" />
+    <Property Type="Int32" Name="PrizeNumber" Nullable="true" />
+    <Property Type="Int32" Name="GuessNumber" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="Stage" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getRuleToPlay_Result">
+    <Property Type="Int32" Name="ID_Rule" Nullable="false" />
+    <Property Type="Int32" Name="RoundNumber" Nullable="true" />
+    <Property Type="Int32" Name="PrizeNumber" Nullable="true" />
+    <Property Type="Int32" Name="GuessNumber" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="Stage" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getPrize_Result">
+    <Property Type="Int32" Name="ID_Prize" Nullable="false" />
+    <Property Type="String" Name="CoCauGiai" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ChiTietGiai" Nullable="true" />
+    <Property Type="Int32" Name="Number" Nullable="true" />
+    <Property Type="String" Name="GhiChu" Nullable="true" />
+    <Property Type="String" Name="HinhAnh" Nullable="true" />
+    <Property Type="Int32" Name="ID_Rule" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getRule_Result">
+    <Property Type="Int32" Name="ID_Rule" Nullable="false" />
+    <Property Type="Int32" Name="RoundNumber" Nullable="true" />
+    <Property Type="Int32" Name="PrizeNumber" Nullable="true" />
+    <Property Type="Int32" Name="GuessNumber" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="Stage" Nullable="true" />
+    <Property Type="Int32" Name="SoKMDaTrungGiai" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getSoLanDaQuay_Result">
+    <Property Type="Int32" Name="ID_Prize" Nullable="false" />
+    <Property Type="String" Name="CoCauGiai" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ChiTietGiai" Nullable="true" />
+    <Property Type="Int32" Name="Number" Nullable="true" />
+    <Property Type="String" Name="GhiChu" Nullable="true" />
+    <Property Type="String" Name="HinhAnh" Nullable="true" />
+    <Property Type="Int32" Name="ID_Rule" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="SoLanDaQuay" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getPlayerGP_Result">
+    <Property Type="Int32" Name="ID_PlayerGP" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Room" Nullable="true" />
+    <Property Type="String" Name="BelongType" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Flag" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Dot" Nullable="true" />
+    <Property Type="Int32" Name="Lan" Nullable="true" />
+    <Property Type="String" Name="Giai" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getPlayerIV_Result">
+    <Property Type="Int32" Name="ID_PlayerIV" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Room" Nullable="true" />
+    <Property Type="String" Name="BelongType" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Flag" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Dot" Nullable="true" />
+    <Property Type="Int32" Name="Lan" Nullable="true" />
+    <Property Type="String" Name="Giai" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="HinhNen">
+    <Key>
+      <PropertyRef Name="ID_HinhNen" />
+    </Key>
+    <Property Name="ID_HinhNen" Type="Int32" Nullable="false" />
+    <Property Name="HinhNen1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

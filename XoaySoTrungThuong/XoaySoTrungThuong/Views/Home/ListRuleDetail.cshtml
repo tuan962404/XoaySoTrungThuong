@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Danh sách rule";
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<div class="col-md-12">
+    <br />
+    <h2 style="color:red;">Danh sách luật / vòng quay</h2>
+    <p>
+        <div class="box-body">
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th style="color:red;">Luật chơi số</th>
+                        <th style="color:red;">Đợt quay thứ</th>
+                        <th style="color:red;">Lần quay thứ</th>
+                        <th style="color:red;">Tổng giải thưởng</th>
+                        <th style="color:red;">Tổng khách mời trúng giải</th>
+                        <th style="color:red;">Check</th>
+                        <th style="color:red;">Tổng nhân viên trúng giải</th>
+                        <th style="color:red;">Công cụ</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    @*@{
+                        var listRule = (System.Data.Entity.Core.Objects.ObjectResult<getRuleToPlay_Result>)ViewBag.ListRule;
+                        if (listRule != null)
+                        {
+                            foreach (var u in listRule)
+                            {
+                                int totalPlayGotPrize = u.PrizeNumber.Value - u.GuessNumber.Value;
+                                <tr>
+                                    <td>@u.ID_Rule</td>
+                                    <td>@u.Stage</td>
+                                    <td>@u.RoundNumber</td>
+                                    <td>@u.PrizeNumber</td>
+                                    <td>@u.GuessNumber</td>
+                                    <td><text></text></td>
+                                    <td>@totalPlayGotPrize</td>
+                                    <td>
+                                        <a href="@Url.Action("EditRoalingManager", "Home" , new { id = u.ID_Rule })">Sửa </a>
+                                        || <a href="@Url.Action("DeleteRoalingManager", "Home" , new { id = u.ID_Rule })">Xóa </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    }*@
+                </tbody>
+                <tfoot>
+                    <tr>
+                        @*<th style="color:red;">Đợt quay thứ</th>*@
+                        <th style="color:red;">Luật chơi số</th>
+                        <th style="color:red;">Đợt quay thứ</th>
+                        <th style="color:red;">Lần quay thứ</th>
+                        <th style="color:red;">Tổng giải thưởng</th>
+                        <th style="color:red;">Tổng khách mời trúng giải</th>
+                        <th style="color:red;">Check</th>
+                        <th style="color:red;">Tổng nhân viên trúng giải</th>
+                        <th style="color:red;">Công cụ</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </p>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var id = null;
+        var html = "";
+        var totalPlayGotPrize = null;
+        $.ajax({
+            url: "/Home/getListRule",
+            success: function (responce) {
+                if (responce != null)
+                {
+                    $.each(responce, function (key, u) {
+                        totalPlayGotPrize = u.PrizeNumber - u.GuessNumber;
+                        if (u.Status == true) {
+                            html += '<tr><td>' + u.ID_Rule + '</td><td>' + u.Stage + '</td><td>' + u.RoundNumber + '</td><td>' + u.PrizeNumber + '</td><td>' + u.GuessNumber + '</td><td><input  type="checkbox" checked="checked" value="' + u.ID_Rule + '"/></td><td>' + totalPlayGotPrize + '</td><td><a href="/Home/EditRoalingManager/' + u.ID_Rule + '">Sửa</a> || <a href="/Home/DeleteRoalingManager/' + u.ID_Rule + '">Xóa</a></td></tr>'
+                        }
+                        else {
+                            html += '<tr><td>' + u.ID_Rule + '</td><td>' + u.Stage + '</td><td>' + u.RoundNumber + '</td><td>' + u.PrizeNumber + '</td><td>' + u.GuessNumber + '</td><td><input  type="checkbox" value="' + u.ID_Rule + '"/></td><td>' + totalPlayGotPrize + '</td><td><a href="/Home/EditRoalingManager/' + u.ID_Rule + '">Sửa</a> || <a href="/Home/DeleteRoalingManager/' + u.ID_Rule + '">Xóa</a></td></tr>'
+                        }
+                    });
+                    $("#tbody").html(html);
+                    $("input").on('click', function () {
+                        id = $(this).val();
+                        $.ajax({
+                            url: "/Home/UpdateRule",
+                            data: { id: id },
+                            dataType: "json",
+                            type: "GET"
+                        });
+                    });
+                }
+            }
+        });
+    });
+</script>
+@Scripts.Render("~/Scripts/mustache.js")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")

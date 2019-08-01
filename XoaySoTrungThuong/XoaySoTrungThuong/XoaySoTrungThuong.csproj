@@ -1,0 +1,846 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E49F886E-F175-440D-BEE1-EA8BB8E16408}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XoaySoTrungThuong</RootNamespace>
+    <AssemblyName>XoaySoTrungThuong</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=.%3bInitial Catalog=XoaySoTrungThuong%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="Excel03ConString-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Provider=Microsoft.Jet.OLEDB.4.0%3bData Source={0}%3bExtended Properties=%27Excel 8.0%3bHDR=YES%27" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\Excel03ConString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="Excel07+ConString-Deployment" Order="3">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Provider=Microsoft.ACE.OLEDB.12.0%3bData Source={0}%3bExtended Properties=%27Excel 8.0%3bHDR=YES%27" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\Excel07+ConString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="XoaySoTrungThuongConnectionString-Deployment" Order="4">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=.%3bInitial Catalog=XoaySoTrungThuong%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\XoaySoTrungThuongConnectionString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="XoaySoTrungThuongEntities-Deployment" Order="5">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=.%3bInitial Catalog=XoaySoTrungThuong%3bIntegrated Security=True%3bApplication Name=EntityFramework" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\XoaySoTrungThuongEntities-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="XoaySoTrungThuongEntities1-Deployment" Order="6">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=.%3bInitial Catalog=XoaySoTrungThuong%3bIntegrated Security=True%3bApplication Name=EntityFramework" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\XoaySoTrungThuongEntities1-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Deployment" Order="1">
+          <Destination Path="workstation id=vongquaymayman.mssql.somee.com%3bpacket size=4096%3buser id=vongquaymayman_SQLLogin_1%3bpwd=ndaotekzxz%3bdata source=vongquaymayman.mssql.somee.com%3bpersist security info=False%3binitial catalog=vongquaymayman" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=.%3bInitial Catalog=XoaySoTrungThuong%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="Excel03ConString-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Provider=Microsoft.Jet.OLEDB.4.0%3bData Source={0}%3bExtended Properties=%27Excel 8.0%3bHDR=YES%27" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\Excel03ConString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="Excel07+ConString-Deployment" Order="3">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Provider=Microsoft.ACE.OLEDB.12.0%3bData Source={0}%3bExtended Properties=%27Excel 8.0%3bHDR=YES%27" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\Excel07+ConString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="XoaySoTrungThuongConnectionString-Deployment" Order="4">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=.%3bInitial Catalog=XoaySoTrungThuong%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\XoaySoTrungThuongConnectionString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="XoaySoTrungThuongEntities-Deployment" Order="5">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=.%3bInitial Catalog=XoaySoTrungThuong%3bIntegrated Security=True%3bApplication Name=EntityFramework" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\XoaySoTrungThuongEntities-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="XoaySoTrungThuongEntities1-Deployment" Order="6">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=.%3bInitial Catalog=XoaySoTrungThuong%3bIntegrated Security=True%3bApplication Name=EntityFramework" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\XoaySoTrungThuongEntities1-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DotQuay_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getAllPlayerGP_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getAllPlayerIV_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getAllPlayer_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getAllPrize_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllRule_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getGiaiThuong_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getLanQuay_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getPlayerGP_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getPlayerIV_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getPrize_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getRuleToPlay_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getRule_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getSoLanDaQuay_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HinhNen.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogQuay.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701071458592_InitialCreate.cs" />
+    <Compile Include="Migrations\201701071458592_InitialCreate.Designer.cs">
+      <DependentUpon>201701071458592_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701071503438_QuaySo.cs" />
+    <Compile Include="Migrations\201701071503438_QuaySo.Designer.cs">
+      <DependentUpon>201701071503438_QuaySo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PrizeRule.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Player.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerGP.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerIV.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prize.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrizeRule_Result.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuleToPlay.cs">
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="XoaySoDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XoaySoDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XoaySoDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XoaySoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XoaySoDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XoaySoDB.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Microsoft.Owin.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\XoaySoTrungThuong.dll" />
+    <Content Include="bin\XoaySoTrungThuong.pdb" />
+    <Content Include="Content\9.jpg" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datatables\dataTables.bootstrap.css" />
+    <Content Include="Content\datatables\dataTables.bootstrap.js" />
+    <Content Include="Content\datatables\dataTables.bootstrap.min.js" />
+    <Content Include="Content\datatables\extensions\AutoFill\css\dataTables.autoFill.css" />
+    <Content Include="Content\datatables\extensions\AutoFill\css\dataTables.autoFill.min.css" />
+    <Content Include="Content\datatables\extensions\AutoFill\examples\columns.html" />
+    <Content Include="Content\datatables\extensions\AutoFill\examples\complete-callback.html" />
+    <Content Include="Content\datatables\extensions\AutoFill\examples\fill-both.html" />
+    <Content Include="Content\datatables\extensions\AutoFill\examples\fill-horizontal.html" />
+    <Content Include="Content\datatables\extensions\AutoFill\examples\index.html" />
+    <Content Include="Content\datatables\extensions\AutoFill\examples\scrolling.html" />
+    <Content Include="Content\datatables\extensions\AutoFill\examples\simple.html" />
+    <Content Include="Content\datatables\extensions\AutoFill\examples\step-callback.html" />
+    <Content Include="Content\datatables\extensions\AutoFill\images\filler.png" />
+    <Content Include="Content\datatables\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Content\datatables\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Content\datatables\extensions\AutoFill\Readme.txt" />
+    <Content Include="Content\datatables\extensions\ColReorder\css\dataTables.colReorder.css" />
+    <Content Include="Content\datatables\extensions\ColReorder\css\dataTables.colReorder.min.css" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\alt_insert.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\colvis.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\col_filter.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\fixedcolumns.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\fixedheader.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\index.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\jqueryui.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\new_init.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\predefined.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\realtime.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\reset.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\scrolling.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\server_side.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\simple.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\examples\state_save.html" />
+    <Content Include="Content\datatables\extensions\ColReorder\images\insert.png" />
+    <Content Include="Content\datatables\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Content\datatables\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Content\datatables\extensions\ColReorder\License.txt" />
+    <Content Include="Content\datatables\extensions\ColVis\css\dataTables.colVis.css" />
+    <Content Include="Content\datatables\extensions\ColVis\css\dataTables.colvis.jqueryui.css" />
+    <Content Include="Content\datatables\extensions\ColVis\css\dataTables.colVis.min.css" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\button_order.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\exclude_columns.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\group_columns.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\index.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\jqueryui.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\mouseover.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\new_init.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\restore.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\simple.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\text.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\title_callback.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\two_tables.html" />
+    <Content Include="Content\datatables\extensions\ColVis\examples\two_tables_identical.html" />
+    <Content Include="Content\datatables\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="Content\datatables\extensions\ColVis\js\dataTables.colVis.min.js" />
+    <Content Include="Content\datatables\extensions\ColVis\License.txt" />
+    <Content Include="Content\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.css" />
+    <Content Include="Content\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.min.css" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\bootstrap.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\colvis.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\col_filter.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\css_size.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\index.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\index_column.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\left_right_columns.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\right_column.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\rowspan.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\server-side-processing.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\simple.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\size_fixed.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\size_fluid.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\examples\two_columns.html" />
+    <Content Include="Content\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Content\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Content\datatables\extensions\FixedColumns\License.txt" />
+    <Content Include="Content\datatables\extensions\FixedHeader\css\dataTables.fixedHeader.css" />
+    <Content Include="Content\datatables\extensions\FixedHeader\css\dataTables.fixedHeader.min.css" />
+    <Content Include="Content\datatables\extensions\FixedHeader\examples\header_footer.html" />
+    <Content Include="Content\datatables\extensions\FixedHeader\examples\index.html" />
+    <Content Include="Content\datatables\extensions\FixedHeader\examples\simple.html" />
+    <Content Include="Content\datatables\extensions\FixedHeader\examples\top_left_right.html" />
+    <Content Include="Content\datatables\extensions\FixedHeader\examples\two_tables.html" />
+    <Content Include="Content\datatables\extensions\FixedHeader\examples\zIndexes.html" />
+    <Content Include="Content\datatables\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Content\datatables\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Content\datatables\extensions\FixedHeader\Readme.txt" />
+    <Content Include="Content\datatables\extensions\KeyTable\css\dataTables.keyTable.css" />
+    <Content Include="Content\datatables\extensions\KeyTable\css\dataTables.keyTable.min.css" />
+    <Content Include="Content\datatables\extensions\KeyTable\examples\events.html" />
+    <Content Include="Content\datatables\extensions\KeyTable\examples\html.html" />
+    <Content Include="Content\datatables\extensions\KeyTable\examples\index.html" />
+    <Content Include="Content\datatables\extensions\KeyTable\examples\scrolling.html" />
+    <Content Include="Content\datatables\extensions\KeyTable\examples\simple.html" />
+    <Content Include="Content\datatables\extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="Content\datatables\extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="Content\datatables\extensions\KeyTable\Readme.txt" />
+    <Content Include="Content\datatables\extensions\Responsive\css\dataTables.responsive.css" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\child-rows\column-control.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\child-rows\custom-renderer.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\child-rows\disable-child-rows.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\child-rows\index.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\child-rows\right-column.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\child-rows\whole-row-control.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\display-control\auto.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\display-control\classes.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\display-control\complexHeader.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\display-control\fixedHeader.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\display-control\index.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\display-control\init-classes.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\index.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\initialisation\ajax.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\initialisation\className.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\initialisation\default.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\initialisation\index.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\initialisation\new.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\initialisation\option.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\styling\bootstrap.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\styling\compact.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\styling\foundation.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\styling\index.html" />
+    <Content Include="Content\datatables\extensions\Responsive\examples\styling\scrolling.html" />
+    <Content Include="Content\datatables\extensions\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Content\datatables\extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Content\datatables\extensions\Responsive\License.txt" />
+    <Content Include="Content\datatables\extensions\Scroller\css\dataTables.scroller.css" />
+    <Content Include="Content\datatables\extensions\Scroller\css\dataTables.scroller.min.css" />
+    <Content Include="Content\datatables\extensions\Scroller\examples\api_scrolling.html" />
+    <Content Include="Content\datatables\extensions\Scroller\examples\data\2500.txt" />
+    <Content Include="Content\datatables\extensions\Scroller\examples\index.html" />
+    <Content Include="Content\datatables\extensions\Scroller\examples\large_js_source.html" />
+    <Content Include="Content\datatables\extensions\Scroller\examples\server-side_processing.html" />
+    <Content Include="Content\datatables\extensions\Scroller\examples\simple.html" />
+    <Content Include="Content\datatables\extensions\Scroller\examples\state_saving.html" />
+    <Content Include="Content\datatables\extensions\Scroller\images\loading-background.png" />
+    <Content Include="Content\datatables\extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="Content\datatables\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Content\datatables\extensions\Scroller\Readme.txt" />
+    <Content Include="Content\datatables\extensions\TableTools\css\dataTables.tableTools.css" />
+    <Content Include="Content\datatables\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\ajax.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\alter_buttons.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\bootstrap.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\button_text.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\collection.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\defaults.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\index.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\jqueryui.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\multiple_tables.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\multi_instance.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\new_init.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\pdf_message.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\plug-in.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\select_column.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\select_multi.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\select_os.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\select_single.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\simple.html" />
+    <Content Include="Content\datatables\extensions\TableTools\examples\swf_path.html" />
+    <Content Include="Content\datatables\extensions\TableTools\images\collection.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\copy.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\copy_hover.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\csv.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\csv_hover.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\pdf.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\pdf_hover.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\print.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\print_hover.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\xls.png" />
+    <Content Include="Content\datatables\extensions\TableTools\images\xls_hover.png" />
+    <Content Include="Content\datatables\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="Content\datatables\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Content\datatables\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="Content\datatables\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\datatables\images\logo.png" />
+    <Content Include="Content\datatables\images\sort_asc.png" />
+    <Content Include="Content\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Content\datatables\images\sort_both.png" />
+    <Content Include="Content\datatables\images\sort_desc.png" />
+    <Content Include="Content\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Content\datatables\jquery.dataTables.css" />
+    <Content Include="Content\datatables\jquery.dataTables.js" />
+    <Content Include="Content\datatables\jquery.dataTables.min.css" />
+    <Content Include="Content\datatables\jquery.dataTables.min.js" />
+    <Content Include="Content\datatables\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\Files\1chivangnhan.png" />
+    <Content Include="Content\Files\3676454_13113152_1073480679380459_1986709030_o.jpg" />
+    <Content Include="Content\Files\banui.png" />
+    <Content Include="Content\Files\bephongngoai.png" />
+    <Content Include="Content\Files\bepnuong.png" />
+    <Content Include="Content\Files\comboquatet.png" />
+    <Content Include="Content\Files\da-nang-goldsun-mc-gal30r-1-190x190.jpg" />
+    <Content Include="Content\Files\donghodeotaytommy.png" />
+    <Content Include="Content\Files\ipad.png" />
+    <Content Include="Content\Files\lonuong.png" />
+    <Content Include="Content\Files\lovisong.png" />
+    <Content Include="Content\Files\lovisongaqua.png" />
+    <Content Include="Content\Files\lovisongsharp.png" />
+    <Content Include="Content\Files\mayxaysinhtodanang.png" />
+    <Content Include="Content\Files\mayxaysinhtophilip.png" />
+    <Content Include="Content\Files\mh-2_24.jpg" />
+    <Content Include="Content\Files\noiapsuat.png" />
+    <Content Include="Content\Files\noicomdien.png" />
+    <Content Include="Content\Files\noilaudien.png" />
+    <Content Include="Content\Files\pinduphongsony.png" />
+    <Content Include="Content\Files\pinsacduphong.png" />
+    <Content Include="Content\Files\quathoinuoc.png" />
+    <Content Include="Content\Files\samsungj3.png" />
+    <Content Include="Content\Files\samsungj5.png" />
+    <Content Include="Content\Files\samsungj7.png" />
+    <Content Include="Content\Files\samsungsm-j510fn.png" />
+    <Content Include="Content\Files\tivi25inasanzo.png" />
+    <Content Include="Content\Files\tivi32in.png" />
+    <Content Include="Content\Files\tivi32indarling.png" />
+    <Content Include="Content\Files\tivi32insony.png" />
+    <Content Include="Content\Files\tivi32insony32r300d.png" />
+    <Content Include="Content\Files\tivi40insony.png" />
+    <Content Include="Content\Files\tivilglcdled.png" />
+    <Content Include="Content\Files\tulanhsharp.png" />
+    <Content Include="Content\Files\xemayblade.png" />
+    <Content Include="Content\Files\xemayfuture.png" />
+    <Content Include="Content\flipclock.css" />
+    <Content Include="Content\iconNo.png" />
+    <Content Include="Content\iconYes.png" />
+    <Content Include="Content\nutquayso.png" />
+    <Content Include="Content\nutReset.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\datatables\extensions\ColReorder\Readme.md" />
+    <Content Include="Content\datatables\extensions\ColVis\Readme.md" />
+    <Content Include="Content\datatables\extensions\FixedColumns\Readme.md" />
+    <Content Include="Content\datatables\extensions\Responsive\css\dataTables.responsive.scss" />
+    <Content Include="Content\datatables\extensions\Responsive\Readme.md" />
+    <Content Include="Content\datatables\extensions\Scroller\examples\data\ssp.php" />
+    <Content Include="Content\datatables\extensions\TableTools\images\psd\collection.psd" />
+    <Content Include="Content\datatables\extensions\TableTools\images\psd\copy document.psd" />
+    <Content Include="Content\datatables\extensions\TableTools\images\psd\file_types.psd" />
+    <Content Include="Content\datatables\extensions\TableTools\images\psd\printer.psd" />
+    <Content Include="Content\datatables\extensions\TableTools\Readme.md" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\XoaySoTrungThuong.dll.config" />
+    <Content Include="Scripts\mustache.js" />
+    <Content Include="XoaySoDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XoaySoDB.edmx</DependentUpon>
+      <LastGenOutput>XoaySoDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="XoaySoDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XoaySoDB.edmx</DependentUpon>
+      <LastGenOutput>XoaySoDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Content\Files\danhsachkhachmoi.xlsx" />
+    <Content Include="Content\Files\danhsachnhanvien.xlsx" />
+    <Content Include="Content\Files\DSTHAMDUBOCTHAM-07-01-2017.xlsx" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\flipclock.js" />
+    <Content Include="Scripts\flipclock.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\RegisterPlayer.cshtml" />
+    <Content Include="Views\Home\RegisterPlayer.cshtml" />
+    <Content Include="Views\Home\ViewAllPlayer.cshtml" />
+    <Content Include="Views\Home\RegisterGuess.cshtml" />
+    <Content Include="Views\Home\EditRoalingManager.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\ListRuleDetail.cshtml" />
+    <Content Include="Views\Home\ListPrize.cshtml" />
+    <Content Include="Views\Home\AddNewPrize.cshtml" />
+    <Content Include="Views\Home\EditNewPrize.cshtml" />
+    <Content Include="Views\Home\ListPlayerGP.cshtml" />
+    <Content Include="Views\Home\ListPlayerIV.cshtml" />
+    <Content Include="Views\Home\ChangeBackground.cshtml" />
+    <None Include="Views\Home\RoalingManager.cshtml" />
+    <EntityDeploy Include="XoaySoDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>XoaySoDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="XoaySoDB.edmx.diagram">
+      <DependentUpon>XoaySoDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\ViewAllGuess.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\_ViewStart2.cshtml" />
+    <Content Include="Views\Home\Roling.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701071458592_InitialCreate.resx">
+      <DependentUpon>201701071458592_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701071503438_QuaySo.resx">
+      <DependentUpon>201701071503438_QuaySo.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61230</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61230/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

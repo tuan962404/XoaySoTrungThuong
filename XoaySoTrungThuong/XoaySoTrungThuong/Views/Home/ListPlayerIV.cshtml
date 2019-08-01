@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "ListPlayerIV";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Danh sách người chơi không hợp lệ";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<link href="~/Content/flipclock.css" rel="stylesheet" />
+<script src="~/Scripts/flipclock.js"></script>
+
+<div class="jumbotron">
+    <div class="row">
+        @Html.ActionLink("Xóa danh sách", "deletePlayerIV")
+        @*@{
+                var listPlayer = (System.Data.Entity.Core.Objects.ObjectResult<getAllPlayer_Result>)ViewBag.ListPlayer;
+            }*@
+        <div class="col-md-12">
+            <h2 style="color:red;">Danh sách nhân viên</h2>
+            <p>
+                <div class="box-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                        <th style="color:red;">Mã số</th>
+                        <th style="color:red;">Tên Nhân Viên</th>
+                        <th style="color:red;">Tên phòng/ Đơn vị</th>
+                        <th style="color:red;">Đợt quay</th>
+                        <th style="color:red;">Lần quay</th>
+                        <th style="color:red;">Giải thưởng</th>
+                        </thead>
+                        <tbody>
+                            @foreach (var u in ViewBag.ListPlayerIV)
+                            {
+                                <tr>
+                                    <td>@u.Code</td>
+                                    <td>@u.Name</td>
+                                    <td>@u.Room</td>
+                                    <td>@u.Dot</td>
+                                    <td>@u.Lan</td>
+                                    <td>@u.Giai</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th style="color:red;">Mã số</th>
+                                <th style="color:red;">Tên Nhân Viên</th>
+                                <th style="color:red;">Tên phòng/ Đơn vị</th>
+                                <th style="color:red;">Đợt quay</th>
+                                <th style="color:red;">Lần quay</th>
+                                <th style="color:red;">Giải thưởng</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </p>
+        </div>
+
+    </div>
+
+    </p>
+
+</div>
+
+
+
+

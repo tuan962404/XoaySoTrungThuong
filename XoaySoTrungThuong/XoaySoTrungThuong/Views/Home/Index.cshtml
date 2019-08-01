@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            background-image: url('../../Content/9.jpg');
+            /*your background image*/
+            background-repeat: no-repeat; /*we want to have one single image not a repeated one*/
+            background-size: cover; /*this sets the image to fullscreen covering the whole screen*/
+            /*css hack for ie*/
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.image.jpg',sizingMethod='scale');
+            -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.jpg',sizingMethod='scale')";
+        }
+
+        #primary_nav_wrap {
+            margin-top: 15px;
+        }
+
+            #primary_nav_wrap ul {
+                list-style: none;
+                position: relative;
+                float: left;
+                margin: 0;
+                padding: 0;
+            }
+
+                #primary_nav_wrap ul a {
+                    display: block;
+                    color: #333;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 32px;
+                    padding: 0 15px;
+                    font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+                }
+
+                #primary_nav_wrap ul li {
+                    position: relative;
+                    float: left;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                    #primary_nav_wrap ul li.current-menu-item {
+                        background: #ddd;
+                    }
+
+                    #primary_nav_wrap ul li:hover {
+                        background: #f6f6f6;
+                    }
+
+                #primary_nav_wrap ul ul {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: #fff;
+                    padding: 0;
+                }
+
+                    #primary_nav_wrap ul ul li {
+                        float: none;
+                        width: 200px;
+                    }
+
+                    #primary_nav_wrap ul ul a {
+                        line-height: 120%;
+                        padding: 10px 15px;
+                    }
+
+                    #primary_nav_wrap ul ul ul {
+                        top: 0;
+                        left: 100%;
+                    }
+
+                #primary_nav_wrap ul li:hover > ul {
+                    display: block;
+                }
+    </style>
+</head>
+<body>
+    <div class="container body-content">
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <link href="~/Content/flipclock.css" rel="stylesheet" />
+        <script src="~/Scripts/flipclock.js"></script>
+        <br />
+        <div>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 style="color:red;">
+                        Tên công ty ABC <br />
+                        Xoay số may mắn
+                    </h2>
+                    <p class="lead">
+                        <div class="clock" style="margin:2em;"></div>
+
+                        <div style="background-image: url('../../Content/nutquayso.png');width:200px;height:190px" class="increment">
+
+                        </div>
+                        <!-- <button type="button" class="reset btn btn-primary btn-lg" style="margin: 25px; font-size: 20px; padding: 15px;">Reset</button> -->
+                </div>
+                <div class="col-md-8">
+                    <h2 style="color:red;">Danh sách trúng thưởng</h2>
+                    <p>
+                        <div class="box-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="color:red;">STT</th>
+                                        <th style="color:red;">Mã số</th>
+                                        <th style="color:red;">Tên phòng/ Đơn vị</th>
+                                        <th style="color:red;">Đợt</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Trident</td>
+                                        <td>
+                                            Internet
+                                            Explorer 4.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td> 4</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Mã số</th>
+                                        <th>Tên phòng/ Đơn vị</th>
+                                        <th>Đợt</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+
+            </div>
+
+            <script type="text/javascript">
+                var clock;
+                var flag = true;
+                $(document).ready(function () {
+                    var timer;
+                    // Instantiate a counter
+                    clock = new FlipClock($('.clock'), 9999, {
+                        clockFace: 'Counter',
+                        minimumDigits: 4
+                    });
+
+                    // Attach a click event to a button a increment the clock
+                    $('.increment').click(function () {
+                        if (flag) {
+                            timer = window.setInterval(function () {
+                                clock.setValue(Math.floor(1000 + Math.random() * 9000));
+
+                            }, 0.1);
+                            flag = false;
+                            // $(this).text('Dừng lại');
+                            //clock.setValue(10);
+
+                            // Or you could decrease the clock
+                            // clock.decrement();
+
+                            // Or set it to a specific value
+                            // clock.setValue(x);
+
+                            // Use this code if you want to autoincrement the counter.
+
+                        } else {
+                            clearInterval(timer);
+                            flag = true;
+                            //      $(this).text('Quay số');
+                            clock.setValue("9999");
+                        }
+                    });
+
+                    // Attach a click event to a button a decrement the clock
+                    $('.decrement').click(function () {
+                        clock.decrement();
+                    });
+
+                    $('.reset').click(function () {
+                        clock.reset();
+                    });
+                });
+            </script>
+            </p>
+
+        </div>
+        <hr />
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

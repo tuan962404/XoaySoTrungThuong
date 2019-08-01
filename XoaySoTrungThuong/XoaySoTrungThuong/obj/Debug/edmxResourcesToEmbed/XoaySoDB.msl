@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="XoaySoTrungThuongModelStoreContainer" CdmEntityContainer="XoaySoTrungThuongEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="XoaySoTrungThuongModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prizes">
+      <EntityTypeMapping TypeName="XoaySoTrungThuongModel.Prize">
+        <MappingFragment StoreEntitySet="Prize">
+          <ScalarProperty Name="SoLanDaQuay" ColumnName="SoLanDaQuay" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ID_Prize" ColumnName="ID_Prize" />
+          <ScalarProperty Name="CoCauGiai" ColumnName="CoCauGiai" />
+          <ScalarProperty Name="ChiTietGiai" ColumnName="ChiTietGiai" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleToPlays">
+      <EntityTypeMapping TypeName="XoaySoTrungThuongModel.RuleToPlay">
+        <MappingFragment StoreEntitySet="RuleToPlay">
+          <ScalarProperty Name="SoKMDaTrungGiai" ColumnName="SoKMDaTrungGiai" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+          <ScalarProperty Name="RoundNumber" ColumnName="RoundNumber" />
+          <ScalarProperty Name="PrizeNumber" ColumnName="PrizeNumber" />
+          <ScalarProperty Name="GuessNumber" ColumnName="GuessNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getAllPlayer" FunctionName="XoaySoTrungThuongModel.Store.getAllPlayer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getAllPlayer_Result">
+          <ScalarProperty Name="ID_Player" ColumnName="ID_Player" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="BelongType" ColumnName="BelongType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="deleteAllPlayer" FunctionName="XoaySoTrungThuongModel.Store.deleteAllPlayer" />
+    <FunctionImportMapping FunctionImportName="deleteAllGuess" FunctionName="XoaySoTrungThuongModel.Store.deleteAllGuess" />
+    <FunctionImportMapping FunctionImportName="GetAllRule" FunctionName="XoaySoTrungThuongModel.Store.GetAllRule">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.GetAllRule_Result">
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+          <ScalarProperty Name="RoundNumber" ColumnName="RoundNumber" />
+          <ScalarProperty Name="PrizeNumber" ColumnName="PrizeNumber" />
+          <ScalarProperty Name="GuessNumber" ColumnName="GuessNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="updateRuleToPlay" FunctionName="XoaySoTrungThuongModel.Store.updateRuleToPlay" />
+    <FunctionImportMapping FunctionImportName="deleteRuleToPlay" FunctionName="XoaySoTrungThuongModel.Store.deleteRuleToPlay" />
+    <FunctionImportMapping FunctionImportName="getAllPrize" FunctionName="XoaySoTrungThuongModel.Store.getAllPrize">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getAllPrize_Result">
+          <ScalarProperty Name="ID_Prize" ColumnName="ID_Prize" />
+          <ScalarProperty Name="CoCauGiai" ColumnName="CoCauGiai" />
+          <ScalarProperty Name="ChiTietGiai" ColumnName="ChiTietGiai" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="insertPrize" FunctionName="XoaySoTrungThuongModel.Store.insertPrize" />
+    <FunctionImportMapping FunctionImportName="deletePrize" FunctionName="XoaySoTrungThuongModel.Store.deletePrize" />
+    <EntitySetMapping Name="LogQuays">
+      <EntityTypeMapping TypeName="XoaySoTrungThuongModel.LogQuay">
+        <MappingFragment StoreEntitySet="LogQuay">
+          <ScalarProperty Name="ID_Prize" ColumnName="ID_Prize" />
+          <ScalarProperty Name="ID_Player" ColumnName="ID_Player" />
+          <ScalarProperty Name="CurrentID_Rule" ColumnName="CurrentID_Rule" />
+          <ScalarProperty Name="ID_LogQuay" ColumnName="ID_LogQuay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="insertLogQuay" FunctionName="XoaySoTrungThuongModel.Store.insertLogQuay" />
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="XoaySoTrungThuongModel.Player">
+        <MappingFragment StoreEntitySet="Player">
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="BelongType" ColumnName="BelongType" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID_Player" ColumnName="ID_Player" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="updateFlagForPlayer" FunctionName="XoaySoTrungThuongModel.Store.updateFlagForPlayer" />
+    <EntitySetMapping Name="PlayerGPs">
+      <EntityTypeMapping TypeName="XoaySoTrungThuongModel.PlayerGP">
+        <MappingFragment StoreEntitySet="PlayerGP">
+          <ScalarProperty Name="Giai" ColumnName="Giai" />
+          <ScalarProperty Name="Lan" ColumnName="Lan" />
+          <ScalarProperty Name="Dot" ColumnName="Dot" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="BelongType" ColumnName="BelongType" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID_PlayerGP" ColumnName="ID_PlayerGP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayerIVs">
+      <EntityTypeMapping TypeName="XoaySoTrungThuongModel.PlayerIV">
+        <MappingFragment StoreEntitySet="PlayerIV">
+          <ScalarProperty Name="Giai" ColumnName="Giai" />
+          <ScalarProperty Name="Lan" ColumnName="Lan" />
+          <ScalarProperty Name="Dot" ColumnName="Dot" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="BelongType" ColumnName="BelongType" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID_PlayerIV" ColumnName="ID_PlayerIV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CountAllPlayer" FunctionName="XoaySoTrungThuongModel.Store.CountAllPlayer" />
+    <FunctionImportMapping FunctionImportName="getAllPlayerGP" FunctionName="XoaySoTrungThuongModel.Store.getAllPlayerGP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getAllPlayerGP_Result">
+          <ScalarProperty Name="ID_PlayerGP" ColumnName="ID_PlayerGP" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="BelongType" ColumnName="BelongType" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAllPlayerIV" FunctionName="XoaySoTrungThuongModel.Store.getAllPlayerIV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getAllPlayerIV_Result">
+          <ScalarProperty Name="ID_PlayerIV" ColumnName="ID_PlayerIV" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="BelongType" ColumnName="BelongType" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getDotQuay" FunctionName="XoaySoTrungThuongModel.Store.getDotQuay" />
+    <FunctionImportMapping FunctionImportName="getGiaiThuong" FunctionName="XoaySoTrungThuongModel.Store.getGiaiThuong">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getGiaiThuong_Result">
+          <ScalarProperty Name="ID_Prize" ColumnName="ID_Prize" />
+          <ScalarProperty Name="CoCauGiai" ColumnName="CoCauGiai" />
+          <ScalarProperty Name="ChiTietGiai" ColumnName="ChiTietGiai" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getLanQuay" FunctionName="XoaySoTrungThuongModel.Store.getLanQuay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getLanQuay_Result">
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+          <ScalarProperty Name="RoundNumber" ColumnName="RoundNumber" />
+          <ScalarProperty Name="PrizeNumber" ColumnName="PrizeNumber" />
+          <ScalarProperty Name="GuessNumber" ColumnName="GuessNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAllDotQuay" FunctionName="XoaySoTrungThuongModel.Store.getAllDotQuay" />
+    <FunctionImportMapping FunctionImportName="DotQuay" FunctionName="XoaySoTrungThuongModel.Store.DotQuay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.DotQuay_Result">
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+          <ScalarProperty Name="RoundNumber" ColumnName="RoundNumber" />
+          <ScalarProperty Name="PrizeNumber" ColumnName="PrizeNumber" />
+          <ScalarProperty Name="GuessNumber" ColumnName="GuessNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LanQuay" FunctionName="XoaySoTrungThuongModel.Store.LanQuay" />
+    <FunctionImportMapping FunctionImportName="GiaiThuong" FunctionName="XoaySoTrungThuongModel.Store.GiaiThuong" />
+    <FunctionImportMapping FunctionImportName="PrizeRule" FunctionName="XoaySoTrungThuongModel.Store.PrizeRule">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.PrizeRule_Result">
+          <ScalarProperty Name="ID_Prize" ColumnName="ID_Prize" />
+          <ScalarProperty Name="CoCauGiai" ColumnName="CoCauGiai" />
+          <ScalarProperty Name="ChiTietGiai" ColumnName="ChiTietGiai" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+          <ScalarProperty Name="ID_Rule1" ColumnName="ID_Rule1" />
+          <ScalarProperty Name="RoundNumber" ColumnName="RoundNumber" />
+          <ScalarProperty Name="PrizeNumber" ColumnName="PrizeNumber" />
+          <ScalarProperty Name="GuessNumber" ColumnName="GuessNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getRuleToPlay" FunctionName="XoaySoTrungThuongModel.Store.getRuleToPlay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getRuleToPlay_Result">
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+          <ScalarProperty Name="RoundNumber" ColumnName="RoundNumber" />
+          <ScalarProperty Name="PrizeNumber" ColumnName="PrizeNumber" />
+          <ScalarProperty Name="GuessNumber" ColumnName="GuessNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPrize" FunctionName="XoaySoTrungThuongModel.Store.getPrize">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getPrize_Result">
+          <ScalarProperty Name="ID_Prize" ColumnName="ID_Prize" />
+          <ScalarProperty Name="CoCauGiai" ColumnName="CoCauGiai" />
+          <ScalarProperty Name="ChiTietGiai" ColumnName="ChiTietGiai" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getRule" FunctionName="XoaySoTrungThuongModel.Store.getRule">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getRule_Result">
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+          <ScalarProperty Name="RoundNumber" ColumnName="RoundNumber" />
+          <ScalarProperty Name="PrizeNumber" ColumnName="PrizeNumber" />
+          <ScalarProperty Name="GuessNumber" ColumnName="GuessNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+          <ScalarProperty Name="SoKMDaTrungGiai" ColumnName="SoKMDaTrungGiai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getSoLanDaQuay" FunctionName="XoaySoTrungThuongModel.Store.getSoLanDaQuay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getSoLanDaQuay_Result">
+          <ScalarProperty Name="ID_Prize" ColumnName="ID_Prize" />
+          <ScalarProperty Name="CoCauGiai" ColumnName="CoCauGiai" />
+          <ScalarProperty Name="ChiTietGiai" ColumnName="ChiTietGiai" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SoLanDaQuay" ColumnName="SoLanDaQuay" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPlayerGP" FunctionName="XoaySoTrungThuongModel.Store.getPlayerGP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getPlayerGP_Result">
+          <ScalarProperty Name="ID_PlayerGP" ColumnName="ID_PlayerGP" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="BelongType" ColumnName="BelongType" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="Dot" ColumnName="Dot" />
+          <ScalarProperty Name="Lan" ColumnName="Lan" />
+          <ScalarProperty Name="Giai" ColumnName="Giai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPlayerIV" FunctionName="XoaySoTrungThuongModel.Store.getPlayerIV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="XoaySoTrungThuongModel.getPlayerIV_Result">
+          <ScalarProperty Name="ID_PlayerIV" ColumnName="ID_PlayerIV" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="BelongType" ColumnName="BelongType" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="Dot" ColumnName="Dot" />
+          <ScalarProperty Name="Lan" ColumnName="Lan" />
+          <ScalarProperty Name="Giai" ColumnName="Giai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="deletePlayerGP" FunctionName="XoaySoTrungThuongModel.Store.deletePlayerGP" />
+    <FunctionImportMapping FunctionImportName="deletePlayerIV" FunctionName="XoaySoTrungThuongModel.Store.deletePlayerIV" />
+    <EntitySetMapping Name="HinhNens">
+      <EntityTypeMapping TypeName="XoaySoTrungThuongModel.HinhNen">
+        <MappingFragment StoreEntitySet="HinhNen">
+          <ScalarProperty Name="HinhNen1" ColumnName="HinhNen" />
+          <ScalarProperty Name="ID_HinhNen" ColumnName="ID_HinhNen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
